@@ -22,3 +22,20 @@ const connectToDatabase = async () => {
 };
 
 connectToDatabase();
+
+// Same with Promise .then()
+// mongoose
+//   .connect(url, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => {
+//     console.log("MongoDB connection established");
+//     initCron();
+//   })
+//   .catch((err) => {
+//     console.log(
+//       `MongoDB connection error. Please make sure MongoDB is running. ${err}`
+//     );
+//   });
