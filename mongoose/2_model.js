@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 //Schema is like interface for Document
 // is describes how document should look like
-// what kind of fileds it should has and their types and are they required or not
+// what kind of fileds it should have and their types and are they required or not
 const userSchema = mongoose.Schema({
   name: {
     type: String,
