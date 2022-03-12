@@ -5,13 +5,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node 3_expressWebServer/3_servingUpStatisAssets.js",
-    "dev": "nodemon 3_expressWebServer/3_servingUpStatisAssets.js"
+    "start": "node 3_expressWebServer/4_servingUpDynamicPage.js",
+    "dev": "nodemon 3_expressWebServer/4_servingUpDynamicPage.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
+    "hbs": "^4.2.0",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.5",
     "validator": "^13.7.0"
