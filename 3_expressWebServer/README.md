@@ -12,3 +12,8 @@ file.hbs files can see res.render("file", {name: "Tornike"}) values or propertie
 
 we need to views folder was in the root folder where package.json is
 and all its files is visible for res.render("here")
+
+hbs.registerPartials(partialsPath); partials are like Components in react
+
+we need to tell hbs where to find directory of partials (components)
+and to use component hbs use syntacs {{>component}}

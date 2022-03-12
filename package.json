@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node 3_expressWebServer/4_servingUpDynamicPage.js",
-    "dev": "nodemon 3_expressWebServer/4_servingUpDynamicPage.js"
+    "start": "node 3_expressWebServer/5_servingUpDynamicPage2.js",
+    "dev": "nodemon 3_expressWebServer/5_servingUpDynamicPage2.js"
   },
   "author": "",
   "license": "ISC",
