@@ -5,13 +5,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node 3_expressWebServer/3_servingUpStatisAssets.js",
+    "dev": "nodemon 3_expressWebServer/3_servingUpStatisAssets.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.3",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.5",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
