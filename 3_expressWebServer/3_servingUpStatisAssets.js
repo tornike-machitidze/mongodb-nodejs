@@ -24,3 +24,6 @@ app.get("/projetcs", (req, res) => {
 app.listen(PORT, () => {
   console.log("Server is up and running on port" + PORT);
 });
+
+//__filename: Returns the absolute path to the current file
+//__dirname: Returns the absolute path to the parrent folder
