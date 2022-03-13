@@ -14,33 +14,32 @@ app.set("view engine", "hbs");
 app.set("views", viewsPath);
 hbs.registerPartials(partialsPath);
 
-app.get("", (req, res) => {
+// weather.com ===> index.hbs file will be rendered
+app.get("/", (req, res) => {
   res.render("index", {
     title: "Weather App",
-    description:
-      "Hello and wellcome to my first real express served app, which uses weather api and for pages I used handlerbars, hbs.",
+    description: "Hello and Welcome to my first express served app",
   });
 });
 
-// weather.com/help ==> renders help.hbs file
-app.get("/help", (req, res) => {
-  res.render("help", {
-    title: "Help page",
-  });
-});
-
-// weather.com/about ==> renders about.hbs file
+// weather.com/about ===> about.hbs page will be rendered
 app.get("/about", (req, res) => {
   res.render("about", {
-    title: "About page",
+    title: "About Me",
   });
 });
 
-// weather.com/weather ==> {  } JSON return jus json
-app.get("/weather", (eq, res) => {
+// weather.com/help ====> help.hbs file will be rendered
+app.get("/help", (req, res) => {
+  res.render("help", {
+    title: "How can I help ?",
+  });
+});
+
+// weather.com/weather ===> JSON { "weather": "rainy" } will be shown
+app.get("/weather", (req, res) => {
   res.send({
-    forecast: "rainy",
-    location: "Tbilisi",
+    weather: "rainy",
   });
 });
 

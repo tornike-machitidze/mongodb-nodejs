@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node 3_expressWebServer/6_ServingUpRealDynamicPage.js",
-    "dev": "nodemon 3_expressWebServer/6_ServingUpRealDynamicPage.js"
+    "start": "node 3_expressWebServer/6_servingUpWeatherApp.js",
+    "dev": "nodemon 3_expressWebServer/6_servingUpWeatherApp.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,8 @@
     "hbs": "^4.2.0",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.5",
+    "postman-request": "^2.88.1-postman.31",
+    "request": "^2.88.2",
     "validator": "^13.7.0"
   },
   "devDependencies": {

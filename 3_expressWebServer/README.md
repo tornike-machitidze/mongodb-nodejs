@@ -17,3 +17,14 @@ hbs.registerPartials(partialsPath); partials are like Components in react
 
 we need to tell hbs where to find directory of partials (components)
 and to use component hbs use syntacs {{>component}}
+
+i use request npm package to send http requests from node app
+request.get("url", (error, response, body) => {
+JSON.parse(body)
+})
+
+request.get({url: url, json: true}, (err, res, body) => {
+body // already parsed
+})
+
+for json format data it is nice to use JSON Formatter chrome extesnion
