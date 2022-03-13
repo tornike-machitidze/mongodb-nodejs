@@ -3,6 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import hbs from "hbs";
+import request from "request";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -38,9 +39,23 @@ app.get("/help", (req, res) => {
 
 // weather.com/weather ===> JSON { "weather": "rainy" } will be shown
 app.get("/weather", (req, res) => {
-  res.send({
-    weather: "rainy",
-  });
+  if (req.query.search) {
+    const city = req.query.search;
+    const url = `http://api.weatherstack.com/current?access_key=a021d913c0ce6e7bc61b70b25d809b7d&query=${city}`;
+
+    request({ url, json: true }, (error, response, body) => {
+      const { temperature, feelslike, weather_descriptions } = body.current;
+      if (error) {
+        console.log("Cant access weather stack api");
+      } else if (body.error) {
+        console.log("Unable to find location");
+      } else {
+        res.send({
+          weather: `${weather_descriptions}, It is ${temperature} degree, and it feels like ${feelslike}`,
+        });
+      }
+    });
+  }
 });
 
 app.listen(3000, () => {
