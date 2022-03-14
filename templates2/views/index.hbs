@@ -14,5 +14,25 @@
     {{>header}}
     <h1>{{title}}</h1>
     <p>{{description}}</p>
+    <form id="form">
+      <input type="text" id="search">
+      <button id="btn" type="submit">search</button>
+    </form>
+    <script>
+    const form = document.getElementById("form")
+    const input = document.getElementById("search")
+    
+    form.addEventListener("submit", (e) => {
+      e.preventDefault()
+      console.log(input.value)
+      const city = input.value 
+      window.location.href = `http://localhost:3000/weather?search=${city}`
+      input.value = ""
+     
+    })
+
+    
+  </script>
   </body>
+  
 </html>

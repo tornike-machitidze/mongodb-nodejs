@@ -38,20 +38,38 @@ app.get("/help", (req, res) => {
 });
 
 // weather.com/weather ===> JSON { "weather": "rainy" } will be shown
+// localhost:3000/weather?search=tbilisi
 app.get("/weather", (req, res) => {
+  if (!req.query.search) {
+    res.render("error", {
+      text: "Please enter place",
+    });
+    return;
+  }
   if (req.query.search) {
     const city = req.query.search;
     const url = `http://api.weatherstack.com/current?access_key=a021d913c0ce6e7bc61b70b25d809b7d&query=${city}`;
 
     request({ url, json: true }, (error, response, body) => {
-      const { temperature, feelslike, weather_descriptions } = body.current;
       if (error) {
+        res.render("error", {
+          text: "Cant access weather stack api",
+        });
         console.log("Cant access weather stack api");
+        return;
       } else if (body.error) {
+        res.render("error", {
+          text: "Unable to find location",
+        });
         console.log("Unable to find location");
+        return;
       } else {
-        res.send({
-          weather: `${weather_descriptions}, It is ${temperature} degree, and it feels like ${feelslike}`,
+        const { temperature, feelslike, weather_descriptions } = body.current;
+        res.render("result", {
+          city,
+          weather_descriptions,
+          temperature,
+          feelslike,
         });
       }
     });
