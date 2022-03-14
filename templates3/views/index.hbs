@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+  </head>
+  <body>
+      {{>header}}
+    <form id="form">
+        <input id="input" type="text">
+        <button type="submit">Search</button>
+    </form>
+    <div id="result"></div>
+    
+    <script>
+        const form = document.getElementById("form")
+        const input = document.getElementById("input")
+        const result = document.getElementById("result")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const address = input.value.trim()
+            if(!address){
+                return result.innerHTML = "Please enter address"
+            }
+
+            
+            fetch(`http://localhost:3000/weather?address=${address}`)
+            .then(response => response.json())
+            .then(data => {
+                const{err} = data
+                if(err){
+                    result.innerHTML = err
+                }else{
+                    const {temperature, feelslike, weather_descriptions} = data
+                    result.innerHTML = `${weather_descriptions[0]}, It is ${temperature} degree temperature, but it feels like ${feelslike} degree`
+
+                }
+            })
+            .catch(error => console.log(error))
+        })
+    </script>
+  </body>
+  
+</html>
+

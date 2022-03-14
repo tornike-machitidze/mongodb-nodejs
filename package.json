@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node 3_expressWebServer/6_servingUpWeatherApp.js",
-    "dev": "nodemon 3_expressWebServer/6_servingUpWeatherApp.js"
+    "start": "node 3_expressWebServer/7_servingUpWeatherApp.js",
+    "dev": "nodemon 3_expressWebServer/7_servingUpWeatherApp.js"
   },
   "author": "",
   "license": "ISC",

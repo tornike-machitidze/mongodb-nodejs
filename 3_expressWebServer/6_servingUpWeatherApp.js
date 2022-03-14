@@ -79,3 +79,14 @@ app.get("/weather", (req, res) => {
 app.listen(3000, () => {
   console.log("Server is up and running on port 3000");
 });
+
+// This is one way of doing this
+// Client types city and redirect to the url http://localhost:3000/weather?search=city
+// backend on this url /weather?search=city gets search value, send request and renders new page with returned values
+//
+
+// 1) client redirect page
+// 2) server gets url, req.query.search parameter
+// 3) sends request with this word
+// 4) gets response
+// 5) renders page with got values
