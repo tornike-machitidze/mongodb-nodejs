@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node 4_REST-API/app.js",
-    "dev": "nodemon 4_REST-API/app.js"
+    "start": "node 5_REST-API/app.js",
+    "dev": "nodemon 5_REST-API/app.js"
   },
   "author": "",
   "license": "ISC",
