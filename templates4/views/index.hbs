@@ -1,0 +1,19 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HBS</title>
+  </head>
+  <body>
+    <h1>Georgia Regions</h1>
+
+    <script>
+      fetch("http://localhost:3000/regions").then(res =>res.json())
+      .then(regions => { const {name, adm_center, area,
+      population,national_composition,municipalities} = regions
+      document.body.appendChild( (document.createElement("h2").textContent =
+      name) ) }).catch(err => console.log(err))
+    </script>
+  </body>
+</html>
